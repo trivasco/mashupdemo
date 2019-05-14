@@ -17,7 +17,7 @@ var prefix = window.location.pathname.substr( 0, window.location.pathname.toLowe
 
 
 var config = {
-	host: "solution.qliktech.com",
+	host: "windows2012-cii",
 	prefix: "/",
 	port: 80,
 	isSecure: false
@@ -28,7 +28,7 @@ var config = {
 var app;
 require.config( {
 	/*baseUrl: (config.isSecure ? "https://" : "http://" ) + config.host + (config.port ? ":" + config.port : "" ) + config.prefix + "resources"*/
-	baseUrl: "http://solution.qliktech.com/resources"
+	baseUrl: "http://windows2012-cii/resources"
 } );
 
 require( ["js/qlik"], function ( qlik ) {
@@ -123,11 +123,11 @@ require( ["js/qlik"], function ( qlik ) {
 	}
 
 	//open apps -- inserted here --
-	var app = qlik.openApp('95004574-7351-4262-8c0f-722936e148d1', config);
+	var app = qlik.openApp('95004574-7351-4262-8c0f-bf7877fd-f92b-429b-b546-f5f9a116cf38', config);
 
 	//get objects -- inserted here --
-	app.getObject('div1','EjWYT');
-	app.getObject('div2','juBGKPt');
+	app.getObject('div1','fzrxtjq');
+	app.getObject('div2','nvqpV');
 
 if(app) {
 		new AppUi( app );
