@@ -1,0 +1,22 @@
+{
+  "name": "qlik-mashup-demo",
+  "version": "1.0.0",
+  "description": "qlik mashup demo, using materialize CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trivasco/mashupdemo.git"
+  },
+  "author": "Andrea Vasco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trivasco/mashupdemo/issues"
+  },
+  "homepage": "https://github.com/trivasco/mashupdemo#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
