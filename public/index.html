@@ -121,7 +121,6 @@
   <div id="otf" class="section">
     <div class="container">
       <h3 class="center pink-text text-darken-4">Generating on the fly </h3>
-      <a class="qcmd" data-qcmd="clearAll">ClearAll</a>
       <div class="row center">
         <div class="col s12 m6 l6 center">
           <div class="borderShadow divembed" id="otf1"></div>
@@ -138,9 +137,126 @@
         <div class="col s10 m10 l10 push-s1 push-l1 push-m1">
           <h5 class="center">Code snippets</h5>
           <b>Javascript</b>
-          <pre><xmp>var app = qlik.openApp('bf7877fd-f92b-429b-b546-f5f9a116cf38', config);</xmp></pre>
-          <pre><xmp>app.getObject('div1','fzrxtjq');</xmp></pre>
-          <pre><xmp>app.getObject('div2','nvqpV');</xmp></pre>
+          <pre><xmp>app.visualization.create(</xmp></pre>
+          <pre><xmp>    'scatterplot',</xmp></pre>
+          <pre><xmp>    [</xmp></pre>
+          <pre><xmp>      "[Sales Rep Name]",</xmp></pre>
+          <pre><xmp>      {"qDef": {"qDef": "=((Sum([Sales Quantity]*[Sales Price]))-(Sum([Sales Cost Amount])))/(Sum([Sales Price]* [Sales Quantity]))", "qLabel": "Margin%", "showInPercent": true}},</xmp></pre>
+          <pre><xmp>      /*"=((Sum([Sales Quantity]*[Sales Price]))-(Sum([Sales Cost Amount])))/(Sum([Sales Price]* [Sales Quantity]))",*/</xmp></pre>
+          <pre><xmp>      "=Sum([Sales Quantity]*[Sales Price])",</xmp></pre>
+          <pre><xmp>      "=Sum([Sales Quantity])"</xmp></pre>
+          <pre><xmp></xmp></pre>
+          <pre><xmp>    ],</xmp></pre>
+          <pre><xmp>    {</xmp></pre>
+          <pre><xmp>      "showTitles": true,</xmp></pre>
+          <pre><xmp>      "title": "Sales vs Margin by sales rep  ",</xmp></pre>
+          <pre><xmp>      "refLine": {</xmp></pre>
+          <pre><xmp>        "refLinesX": [</xmp></pre>
+          <pre><xmp>          {</xmp></pre>
+          <pre><xmp>            "show": true,</xmp></pre>
+          <pre><xmp>            "label": "Margin Target",</xmp></pre>
+          <pre><xmp>            "color": "#f93f17",</xmp></pre>
+          <pre><xmp>            "refLineExpr": {</xmp></pre>
+          <pre><xmp>              "label": ".45",</xmp></pre>
+          <pre><xmp>              "value": 0.45</xmp></pre>
+          <pre><xmp>            },</xmp></pre>
+          <pre><xmp>            "cId": "SFmPUz",</xmp></pre>
+          <pre><xmp>            "$$hashKey": "L7J"</xmp></pre>
+          <pre><xmp>          }</xmp></pre>
+          <pre><xmp>        ],</xmp></pre>
+          <pre><xmp>        "refLinesY": []</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "gridLine": {</xmp></pre>
+          <pre><xmp>        "auto": true,</xmp></pre>
+          <pre><xmp>        "spacing": 2</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "xAxis": {</xmp></pre>
+          <pre><xmp>        "show": "labels",</xmp></pre>
+          <pre><xmp>        "label": "auto",</xmp></pre>
+          <pre><xmp>        "dock": "bottom",</xmp></pre>
+          <pre><xmp>        "spacing": 0.5,</xmp></pre>
+          <pre><xmp>        "autoMinMax": false,</xmp></pre>
+          <pre><xmp>        "minMax": "min",</xmp></pre>
+          <pre><xmp>        "min": 0,</xmp></pre>
+          <pre><xmp>        "max": 10</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "yAxis": {</xmp></pre>
+          <pre><xmp>        "show": "labels",</xmp></pre>
+          <pre><xmp>        "label": "auto",</xmp></pre>
+          <pre><xmp>        "dock": "left",</xmp></pre>
+          <pre><xmp>        "spacing": 0.5,</xmp></pre>
+          <pre><xmp>        "autoMinMax": false,</xmp></pre>
+          <pre><xmp>        "minMax": "min",</xmp></pre>
+          <pre><xmp>        "min": 0,</xmp></pre>
+          <pre><xmp>        "max": 10</xmp></pre>
+          <pre><xmp>      }</xmp></pre>
+          <pre><xmp></xmp></pre>
+          <pre><xmp>    }</xmp></pre>
+          <pre><xmp></xmp></pre>
+          <pre><xmp>  ).then(function (vis) {</xmp></pre>
+          <pre><xmp>    vis.show("otf1");</xmp></pre>
+          <pre><xmp>  });</xmp></pre>
+          <pre><xmp></xmp></pre>
+          <pre><xmp></xmp></pre>
+          <pre><xmp>  //create at runtime 2</xmp></pre>
+          <pre><xmp>  app.visualization.create(</xmp></pre>
+          <pre><xmp>    'linechart',</xmp></pre>
+          <pre><xmp>    [</xmp></pre>
+          <pre><xmp></xmp></pre>
+          <pre><xmp>      "YYYYMM",</xmp></pre>
+          <pre><xmp>      "=Sum (ARSalesPerDay)"</xmp></pre>
+          <pre><xmp>      /*"Avg Sales Per Day"*/</xmp></pre>
+          <pre><xmp>    ],</xmp></pre>
+          <pre><xmp>    {</xmp></pre>
+          <pre><xmp>      "showTitles": true,</xmp></pre>
+          <pre><xmp>      "title": "Average Sales per Day",</xmp></pre>
+          <pre><xmp>      "lineType": "area",</xmp></pre>
+          <pre><xmp>      "stackedArea": false,</xmp></pre>
+          <pre><xmp>      "separateStacking": true,</xmp></pre>
+          <pre><xmp>      "nullMode": "gap",</xmp></pre>
+          <pre><xmp>      "dataPoint": {</xmp></pre>
+          <pre><xmp>        "show": true,</xmp></pre>
+          <pre><xmp>        "showLabels": true</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "gridLine": {</xmp></pre>
+          <pre><xmp>        "auto": true,</xmp></pre>
+          <pre><xmp>        "spacing": 2</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "color": {</xmp></pre>
+          <pre><xmp>        "auto": true,</xmp></pre>
+          <pre><xmp>        "mode": "primary",</xmp></pre>
+          <pre><xmp>        "singleColor": "#4477aa",</xmp></pre>
+          <pre><xmp>        "persistent": false,</xmp></pre>
+          <pre><xmp>        "measureScheme": "sg",</xmp></pre>
+          <pre><xmp>        "reverseScheme": false,</xmp></pre>
+          <pre><xmp>        "dimensionScheme": "12"</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "legend": {</xmp></pre>
+          <pre><xmp>        "show": false,</xmp></pre>
+          <pre><xmp>        "dock": "auto",</xmp></pre>
+          <pre><xmp>        "showTitle": true</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "dimensionAxis": {</xmp></pre>
+          <pre><xmp>        "show": "labels",</xmp></pre>
+          <pre><xmp>        "label": "auto",</xmp></pre>
+          <pre><xmp>        "dock": "bottom"</xmp></pre>
+          <pre><xmp>      },</xmp></pre>
+          <pre><xmp>      "measureAxis": {</xmp></pre>
+          <pre><xmp>        "show": "labels",</xmp></pre>
+          <pre><xmp>        "label": "horizontal",</xmp></pre>
+          <pre><xmp>        "dock": "left",</xmp></pre>
+          <pre><xmp>        "spacing": 0.75,</xmp></pre>
+          <pre><xmp>        "autoMinMax": true,</xmp></pre>
+          <pre><xmp>        "minMax": "min",</xmp></pre>
+          <pre><xmp>        "min": 0,</xmp></pre>
+          <pre><xmp>        "max": 10</xmp></pre>
+          <pre><xmp>      }</xmp></pre>
+          <pre><xmp></xmp></pre>
+          <pre><xmp>    }</xmp></pre>
+          <pre><xmp>  ).then(function (vis) {</xmp></pre>
+          <pre><xmp>    vis.show("otf2");</xmp></pre>
+          <pre><xmp>  });</xmp></pre>
+          <pre><xmp>});</xmp></pre>
           <b>HTML</b>
           <pre><xmp><div class="borderShadow divembed" id="div1"></div></xmp></pre>
           <pre><xmp><div class="borderShadow divembed" id="div2"></div></xmp></pre>
