@@ -6,11 +6,11 @@
  *    Fill in host and port for Qlik engine
  */
  
-var appId="44108804-02d4-4488-aaa7-9fde0f202cde";
-var Obj1Id = "uepDhW";
-var Obj2Id = "kaGjPc";
+var appId="03b86238-2f7a-4d61-8d30-9e57aeb2b643";
+var Obj1Id = "qZPdytp";
+var Obj2Id = "fzrxtjq";
 
-$('#iFrame01').attr('src','https://windows2012-cii/single/?appid=44108804-02d4-4488-aaa7-9fde0f202cde&obj=uepDhW')
+$('#iFrame01').attr('src','https://qmi-qs-sn/single/?appid=03b86238-2f7a-4d61-8d30-9e57aeb2b643&obj=qZPdytp')
 
 var prefix = window.location.pathname.substr(0, window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1);
 var config = {
@@ -62,10 +62,10 @@ require(["js/qlik"], function (qlik) {
 
 	//open apps -- inserted here --
 	
-	//var app = qlik.openApp('bf7877fd-f92b-429b-b546-f5f9a116cf38', config);
+	
 	var app = qlik.openApp(appId, config);
 
-	var app1 = qlik.openApp('db632d47-dba0-4a42-b238-afd3431da6bb', config);
+	var app1 = qlik.openApp('03b86238-2f7a-4d61-8d30-9e57aeb2b643', config);
 	
 
 		
@@ -107,8 +107,8 @@ require(["js/qlik"], function (qlik) {
 	],
 	"qDimensions": [
 		{
-			"qLabel": "Business Type",
-			"qLibraryId": "UpbmJRG",
+			"qLabel": "Product Type",
+			"qLibraryId": "ANYTpUm",
 			"qNullSuppression": true,
 			"qOtherTotalSpec": {
 				"qOtherCounted": {
@@ -119,16 +119,16 @@ require(["js/qlik"], function (qlik) {
 	],
 	"qMeasures": [
 		{
-			"qLabel": "Avg Cost",
-			"qLibraryId": "DWsJCkg"
+			"qLabel": "Margin %",
+			"qLibraryId": "DBUzjm"
 		},
 		{
-			"qLabel": "Quantity",
-			"qLibraryId": "FaJujXm"
+			"qLabel": "# Customers",
+			"qLibraryId": "DSrjAGm"
 		},
 		{
-			"qLabel": "Trade Quantity",
-			"qLibraryId": "GcBRk"
+			"qLabel": "Revenue vs. Budget",
+			"qLibraryId": "NJTmn"
 		}
 	],
 	"qSuppressZero": false,
